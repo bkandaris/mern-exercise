@@ -2,12 +2,12 @@ const express = require('express'); // brings express
 const cors = require('cors'); // brings in cors
 const mongoose = require('mongoose'); // brings in mongoose
 const router = express.Router();
-
+const helmet = require('helmet');
 require('dotenv').config(); // so we can have env variables
 
 const app = express(); // creates our server
 const port = process.env.PORT || 5000;
-
+app.use(helmet());
 app.get('/', (req, res) => {
   res.send('Hello World');
 });
