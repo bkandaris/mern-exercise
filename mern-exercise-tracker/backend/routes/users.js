@@ -2,7 +2,7 @@ const router = require('express').Router();
 let User = require('../user-model');
 
 router.get('/gettest', (req, res) => {
-  res.send('Hellof rom users');
+  res.send('Hello from users');
 });
 
 router.route('/').get((req, res) => {
