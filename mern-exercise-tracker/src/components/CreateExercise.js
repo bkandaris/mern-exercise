@@ -21,7 +21,7 @@ export default function CreateExercise(props) {
       .get('http://localhost:5000/users')
       .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
-  });
+  }, []);
 
   const handleUsername = (e) => {
     setUsername(e.target.value);
@@ -49,12 +49,12 @@ export default function CreateExercise(props) {
       duration: duration,
       date: date,
     };
-    console.log('exercise list', exercise);
+    console.log('exercise', exercise);
 
     axios
-      .post('http://localhost:5000/exercises/add', exercise)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+    .post('http://localhost:5000/exercises/add', exercise)
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
 
     // window.location = '/';
   };

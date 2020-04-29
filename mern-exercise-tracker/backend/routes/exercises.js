@@ -25,6 +25,7 @@ router.route('/add').post((req, res) => {
     date,
   });
 
+
   newExercise
     .save()
     .then(() => res.json('Exercise added!'))
